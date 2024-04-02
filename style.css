@@ -1,20 +1,20 @@
-:root{
+:root {
     --roxo: #200a36;
     --pink: #751bb1;
     --rosa: #81125c;
     --rosa-chiclete: #FFB5DA;
-    --branco:#ffffff;
+    --branco: #ffebeb;
 
 }
 
-body{ 
+body {
     background-color: var(--roxo);
     color: var(--branco);
     font-family: var(--font-texto);
 }
 
-.conteudo-principal{
-    display:flex;
+.conteudo-principal {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -23,54 +23,59 @@ body{
     margin: 0 auto;
 }
 
-.titulo-principal{
+.titulo-principal {
     text-align: left;
     width: 100%;
     font-size: 36px;
 }
-    .titulo-principal span{
-        color: var(--pink);
-    }
 
-    .botao{
-        font-family: var(--font-texto);
-        font-size: 18px;
-        background-color: var(--rosa-chiclete);
-        color: var(--preto);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: lem;
-        width: 100%;
-        border-bottom: 4px solid var(--rosa-chiclete);
-        border-left: 4px solid var(--rosa-chiclete);
-        border-right: 4px solid var(--rosa-chiclete);
-        border-top: none;
-    } 
-    .botoes{
-        display: block;
-    }
+.titulo-principal span {
+    color: var(--pink);
+}
 
-    .botao:first-child{
-        border-radius: 40px 40px 0 0;
-    }
+.botao {
+    font-family: var(--font-texto);
+    font-size: 18px;
+    background-color: var(--rosa-chiclete);
+    color: var(--preto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: lem;
+    width: 100%;
+    border-bottom: 4px solid var(--rosa-chiclete);
+    border-left: 4px solid var(--rosa-chiclete);
+    border-right: 4px solid var(--rosa-chiclete);
+    border-top: none;
+}
 
-    .botao:last-child{
-        border-radius: 0 0 40px;
-    }
+.botoes {
+    display: block;
+}
 
-    .ativo{
-        background-color:var(--pink);
-        border-bottom: 4px solid var(--rosa);
-    }
+.botao:first-child {
+    border-radius: 40px 40px 0 0;
+}
+
+.botao:last-child {
+    border-radius: 0 0 40px;
+}
+
+.ativo {
+    background-color: var(--pink);
+    border-bottom: 4px solid var(--rosa);
+}
+
 @media screen and (min-width: 768px) {
-        .botoes{ 
-            display: flex;
+    .botoes {
+        display: flex;
     }
-    .botao:first-child{
+
+    .botao:first-child {
         border-radius: 40px 0 0 0;
     }
-    .botao:last-child{
+
+    .botao:last-child {
         border-radius: 0 40px 0 0;
     }
 }
