@@ -23,9 +23,9 @@ function comecaCronometro() {
 
 //comecaCronometro();
 
-for (let i = 0; i < botoes.length; i++) {
+for (let i=0; i<botoes.length; i++) {
     botoes[i].onclick = function () {
-        for (j = 0; j < botoes.length; j++) {
+        for (j=0; j<botoes.length; j++) {
             botoes[j].classList.remove('ativo')
             textos[j].classList.remove('ativo')
         }
@@ -50,7 +50,7 @@ function calculaTempo(tempoObjetivo) {
     horas %= 24;
 
     if(tempoFinal > 0){
-    return dias + "Dias" + horas + "horas" + minutos + "minutos" + segundos + "segundos"
+    return dias + " Dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos "
     } else {
         return "Prazo finalizado"
     }     

@@ -41,7 +41,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: lem;
+    padding: 1em;
     width: 100%;
     border-bottom: 4px solid var(--rosa-chiclete);
     border-left: 4px solid var(--rosa-chiclete);
@@ -58,7 +58,7 @@ body {
 }
 
 .botao:last-child {
-    border-radius: 0 0 40px;
+    border-radius: 0 0 40px 40px;
 }
 
 .ativo {
@@ -66,19 +66,7 @@ body {
     border-bottom: 4px solid var(--rosa);
 }
 
-@media screen and (min-width: 768px) {
-    .botoes {
-        display: flex;
-    }
 
-    .botao:first-child {
-        border-radius: 40px 0 0 0;
-    }
-
-    .botao:last-child {
-        border-radius: 0 0 40px 40px;
-    }
-}
 
 .botao.ativo{
     background-color: var(--rosa);
@@ -110,6 +98,30 @@ body {
     text-transform: uppercase;
 }
 
+
+.contador{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contador-digito{
+    padding: 0 16px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.contador-digito-numero{
+    font-size: 65px;
+    margin: 0;
+}
+
+.contador-digito-texto{
+    color: var(--branco);
+    font-size: 20px;
+    margin: 0;
+}
+
 @media screen and (min-width: 768px) {
     .botoes {
         display: flex;
@@ -118,6 +130,6 @@ body {
         border-radius: 40px 0 0 0;
     }
     .botao:last-child{
-        border-radius: 40px 0 0 0;
+        border-radius: 0 40px 0 0;
     }
 }
