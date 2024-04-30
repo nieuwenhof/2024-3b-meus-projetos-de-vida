@@ -1,14 +1,14 @@
 :root {
-    --roxo: #200a36;
-    --pink: #751bb1;
-    --rosa: #81125c;
-    --rosa-chiclete: #FFB5DA;
-    --branco: #ffebeb;
+    --roxo: #1e0833;
+    --pink: #14051a;
+    --rosa: #6e033e;
+    --rosa-chiclete: #000000;
+    --branco: #fff5f5;
 
 }
 
 body {
-    background-color: var(--roxo);
+    background-color: var(--rosa);
     color: var(--branco);
     font-family: var(--font-texto);
 }

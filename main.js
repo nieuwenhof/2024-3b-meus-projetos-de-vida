@@ -3,29 +3,17 @@ const textos = document.querySelectorAll('.aba-conteudo')
 
 const contadores = document.querySelectorAll('.contador')
 
-const tempoObjetivo01 = new Date('2024-11-30T00:00:00')
-const tempoObjetivo02 = new Date('2024-04-02T00:00:00')
-const tempoObjetivo03 = new Date('2024-09-11T00:00:00')
-const tempoObjetivo04 = new Date('2024-12-22T00:00:00')
+const tempoObjetivo01 = new Date("2024-11-30T00:00:00")
+const tempoObjetivo02 = new Date("2024-12-31T00:00:00")
+const tempoObjetivo03 = new Date("2024-12-31T00:00:00")
+const tempoObjetivo04 = new Date("2024-11-10T00:00:00")
 
-const tempos = [tempoObjetivo01, tempoObjetivo02, tempoObjetivo03, tempoObjetivo04]
+const tempos = [tempoObjetivo01, tempoObjetivo02, tempoObjetivo03, tempoObjetivo04];
 
-function atualizaCronometro() {
-    for (let i = 0; i < tempos.length; i++) {
-        contadores[i].textContent = calculaTempo(tempos[i])
-    }
-}
-
-function comecaCronometro() {
-    atualizaCronometro();
-    setInterval(atualizaCronometro, 1000)
-}
-
-//comecaCronometro();
-
-for (let i=0; i<botoes.length; i++) {
+for (let i = 0; i < botoes.length; i++) {
     botoes[i].onclick = function () {
-        for (j=0; j<botoes.length; j++) {
+
+        for (j = 0; j < botoes.length; j++) {
             botoes[j].classList.remove('ativo')
             textos[j].classList.remove('ativo')
         }
@@ -38,7 +26,7 @@ for (let i=0; i<botoes.length; i++) {
 function calculaTempo(tempoObjetivo) {
 
     let tempoAtual = new Date()
-    let tempoFinal = tempoObjetivo - tempoAtual;
+    let tempoFinal = tempoObjetivo - tempoAtual
 
     let segundos = Math.floor(tempoFinal / 1000);
     let minutos = Math.floor(segundos / 60);
@@ -49,10 +37,28 @@ function calculaTempo(tempoObjetivo) {
     minutos %= 60;
     horas %= 24;
 
-    if(tempoFinal > 0){
-    return dias + " Dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos "
+    if (tempoFinal > 0) {
+        return [dias, horas, minutos, segundos];
     } else {
-        return "Prazo finalizado"
-    }     
+        return [0, 0, 0, 0]
+    }
 }
+
+function atualizaCronometro() {
+    for (let i = 0; i < contadores.length; i++) {
+        document.getElementById("dias" + i).textContent = calculaTempo(tempos[i])[0];
+        document.getElementById("horas" + i).textContent = calculaTempo(tempos[i])[1];
+        document.getElementById("min" + i).textContent = calculaTempo(tempos[i])[2];
+        document.getElementById("segs" + i).textContent = calculaTempo(tempos[i])[3];
+    }
+}
+
+function comecaCronometro() {
+    atualizaCronometro();
+    setInterval(atualizaCronometro, 1000);
+}
+
+comecaCronometro();
+
+
 
